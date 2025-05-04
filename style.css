@@ -1,91 +1,111 @@
 
-body {
-  font-family: 'Arial', sans-serif;
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-color: black; 
-  color: white;
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.top-bar {
+  background-color: #000000;
+  color: #ffffff;
   text-align: center;
-  padding-top: 2rem;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
-.hero-logo {
-  max-width: 150px; /* Adjusted size for the Shein logo */
-  height: auto; /* Maintains aspect ratio */
-  margin: 0 auto; /* Centers the image */
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.products {
-  padding: 2rem;
-  background-color: #f4f4f4;
-}
-
-.product-grid {
+.navbar {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
   flex-wrap: wrap;
 }
 
-.product-item {
-  width: calc(33.333% - 1rem);
-  background-color: white;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #000000;
+  letter-spacing: 2px;
 }
 
-.product-item img {
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 10px 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #888888;
+}
+
+.icons {
+  font-size: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.shop-sections {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.shop-box {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.shop-box img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.product-item:hover img {
-  transform: scale(1.05);
+.shop-box:hover img {
+  transform: scale(1.03);
 }
 
-.newsletter {
-  background-color: #333;
-  color: white;
+.overlay-text {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
   text-align: center;
-  padding: 2rem;
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
-.newsletter form {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.newsletter input {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 4px;
-}
-
-.newsletter button {
-  padding: 0.5rem 1rem;
-  background-color: #ff6347;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-}
-
-.newsletter button:hover {
-  background-color: #e5533d;
+.promo-banner {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  margin-top: 40px;
 }
