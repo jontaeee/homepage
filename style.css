@@ -10,10 +10,17 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('images/sheinlogo.jpg') no-repeat center center/cover;
+  background-color: black; /* or any other background */
   color: white;
   text-align: center;
+  padding-top: 2rem;
 }
+
+.hero-logo {
+  max-width: 200px;
+  height: auto;
+}
+
 
 .hero-text {
   position: absolute;
