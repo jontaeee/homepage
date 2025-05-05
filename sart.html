@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .cart-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      max-width: 500px;
+      margin: auto;
+    }
+    .cart-total {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .cart-container {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header><h1 style="text-align:center;">Your Cart</h1></header>
+  <main class="cart-container">
+    <div id="cart-items"></div>
+    <div id="cart-total" class="cart-total"></div>
+  </main>
+  <footer style="text-align:center;margin-top:40px;">&copy; 2025 Your Store</footer>
+
+  <script>
+    function loadCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let container = document.getElementById('cart-items');
+      let total = 0;
+
+      if (cart.length === 0) {
+        container.innerHTML = "<p style='text-align:center;'>Your cart is empty.</p>";
+        return;
+      }
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        let div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <span>${item.name}</span>
+          <span>$${item.price.toFixed(2)}</span>
+        `;
+        container.appendChild(div);
+      });
+
+      document.getElementById('cart-total').innerText = "Total: $" + total.toFixed(2);
+    }
+
+    window.onload = loadCart;
+  </script>
+</body>
+</html>
